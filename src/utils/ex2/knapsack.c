@@ -29,7 +29,7 @@ Object *knapsack(Object objects[], int size, int W){
     insertionsort(objects, size, DESCENDING);
     int current_weight = 0;
     for(int i =0; i < size; i++){
-        if(current_weight + objects[i].weight < W){
+        if(current_weight + objects[i].weight <= W){
             current_weight += objects[i].weight;
             result = &objects[i];
             result++;
