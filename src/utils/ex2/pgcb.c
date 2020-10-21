@@ -1,15 +1,22 @@
 #include "pgcd.h"
 
+/**
+ * @brief  Return min of two value
+ * @note   
+ * @param  a: value to compare 
+ * @param  b: value to compare
+ * @retval 
+ */
 int min(int a, int b)
 {
     return a < b ? a : b;
 }
 
 /**
- * @brief  
+ * @brief  Fill the array
  * @note   
- * @param  size: 
- * @param  N: 
+ * @param  size : Size of the array to fill  
+ * @param  N : Number of obstacle in the matrix 
  * @retval 
  */
 int **fillArray(int size, int N)
@@ -27,6 +34,12 @@ int **fillArray(int size, int N)
     return matrice;
 }
 
+/**
+ * @brief Display the array   
+ * @param  matrice : Array to display 
+ * @param  size : size of the array to display 
+ * @retval None
+ */
 void displayMatrice(int **matrice, int size)
 {
     for (int i = 0; i < size; i++)
@@ -44,6 +57,13 @@ void displayMatrice(int **matrice, int size)
 }
 
 
+/**
+ * @brief  Display the result array
+ * @param  matrice: Array to display
+ * @param  size : size of the array 
+ * @param  c : Coord of the max square 
+ * @retval None
+ */
 void displayResultMatrice(int **matrice, int size, Coord c)
 {    
     for(int i = (c.x - c.size) + 1; i < c.x +1; i++){
@@ -67,7 +87,12 @@ void displayResultMatrice(int **matrice, int size, Coord c)
     }
 }
 
-
+/**
+ * @brief  Find the max square in the matrix 
+ * @param  matrice : Array to explore 
+ * @param  size : Size of the array 
+ * @retval 
+ */
 Coord findMax(int **matrice, int size)
 {
     int max = 0;
@@ -88,6 +113,12 @@ Coord findMax(int **matrice, int size)
     return coords;
 }
 
+/**
+ * @brief   Explore array to find biggest sqare
+ * @param  matrice: array to explore and find biggest square 
+ * @param  size: size of the array
+ * @retval None
+ */
 void pgcb(int **matrice, int size)
 {
     int **S = (int **)calloc(size, sizeof(int *));

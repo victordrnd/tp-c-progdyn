@@ -1,5 +1,24 @@
+/**
+ * @file knapsack.c
+ * @author Victor DURAND (contact@victordurand.fr)
+ * @version 0.1
+ * @date 2020-10-21
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
+
 #include "knapsack.h"
 
+/**
+ * @brief  Sort object
+ * @note   
+ * @param  tab[]: Array of object to sort
+ * @param  size: size of the array
+ * @param  ascending: 0 or 1 for descending, asceneding
+ * @retval None
+ */
 void insertionsort(Object tab[], int size, int ascending)
 {
    int j;
@@ -17,9 +36,9 @@ void insertionsort(Object tab[], int size, int ascending)
 }
 
 /**
- * @brief  
+ * @brief  Return best way of filling the max weight
  * @note   
- * @param  objects[]: 
+ * @param  objects[]: array of object
  * @param  size: size of the array
  * @param  W: max weight
  * @retval None

@@ -24,7 +24,7 @@ int main()
 		backpack++;
 	}
 
-	int ** matrice = fillArray(10, 21);
+	int **matrice = fillArray(10, 21);
 	printf("\n");
 	displayMatrice(matrice, 10);
 
