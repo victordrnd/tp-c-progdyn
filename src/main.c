@@ -18,7 +18,7 @@ int main()
 	Object objects[3] = {o1, o2,o3};
 	Object *backpack = malloc(30 * sizeof(Object));
 	backpack = knapsack(objects, 3, 10);
-	struct MyData* endPtr = backpack + sizeof(backpack)/sizeof(backpack[0]);
+	struct Object *endPtr = backpack + sizeof(backpack)/sizeof(backpack[0]);
 	while(backpack <= endPtr){
 		printf("L'object w : %d, c: %d\n", backpack->weight,backpack->cost);
 		backpack++;
