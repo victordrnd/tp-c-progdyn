@@ -2,5 +2,5 @@
 .vscode/*
 output/*
 bin/*
-
+out/*
 
