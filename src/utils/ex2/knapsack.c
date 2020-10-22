@@ -45,13 +45,14 @@ void insertionsort(Object tab[], int size, int ascending)
  */
 Object *knapsack(Object objects[], int size, int W){ 
     Object *result = malloc(100 * sizeof(Object));
+    Object *wp = result;
     insertionsort(objects, size, DESCENDING);
     int current_weight = 0;
     for(int i =0; i < size; i++){
         if(current_weight + objects[i].weight <= W){
             current_weight += objects[i].weight;
-            result = &objects[i];
-            result++;
+            wp = &objects[i];
+            wp++;
         }
     }
     return result;
