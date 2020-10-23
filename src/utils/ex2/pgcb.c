@@ -1,3 +1,14 @@
+/**
+ * @file pgcb.c
+ * @author Victor DURAND (contact@victordurand.fr)
+ * @version 0.1
+ * @date 2020-10-21
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
+
 #include "pgcd.h"
 
 /**
@@ -19,7 +30,7 @@ int min(int a, int b)
  * @param  N : Number of obstacle in the matrix 
  * @retval 
  */
-int **fillArray(int size, int N)
+int **initMatrix(int size, int N)
 {
     int **matrice = (int **)calloc(size, sizeof(int *));
     for (int i = 0; i < size; i++)
@@ -40,7 +51,7 @@ int **fillArray(int size, int N)
  * @param  size : size of the array to display 
  * @retval None
  */
-void displayMatrice(int **matrice, int size)
+void displayMatrix(int **matrice, int size)
 {
     for (int i = 0; i < size; i++)
     {
@@ -64,8 +75,7 @@ void displayMatrice(int **matrice, int size)
  * @param  c : Coord of the max square 
  * @retval None
  */
-void displayResultMatrice(int **matrice, int size, Coord c)
-{    
+void displayResultMatrice(int **matrice, int size, Coord c){    
     for(int i = (c.x - c.size) + 1; i < c.x +1; i++){
         for(int j = (c.y - c.size) + 1; j < c.y+1; j++){
             matrice[i][j] = 2;
@@ -76,10 +86,14 @@ void displayResultMatrice(int **matrice, int size, Coord c)
     {
         for (int j = 0; j < size; j++)
         {
-            if (matrice[i][j] == 0)
+            if (matrice[i][j] == 0){
                 printf("%c ", ' ');
-            if (matrice[i][j] == 1)
+                continue;
+            }
+            if (matrice[i][j] == 1){
                 printf("%c ", '*');
+                continue;
+            }
             if(matrice[i][j] == 2)
                 printf("%c ", '#');
         }
@@ -113,13 +127,14 @@ Coord findMax(int **matrice, int size)
     return coords;
 }
 
+
 /**
  * @brief   Explore array to find biggest sqare
  * @param  matrice: array to explore and find biggest square 
  * @param  size: size of the array
  * @retval None
  */
-void pgcb(int **matrice, int size)
+Coord pgcb(int **matrice, int size)
 {
     int **S = (int **)calloc(size, sizeof(int *));
     for (int i = 0; i < size; i++)
@@ -141,7 +156,7 @@ void pgcb(int **matrice, int size)
                 S[i][j] = 1;
         }
     }
-    displayMatrice(S, size);
-    Coord coord = findMax(S, size);
-    displayResultMatrice(matrice, size, coord);
+    Coord coords = findMax(S, size);
+    return coords;
+    
 }

@@ -7,8 +7,10 @@ typedef struct{
 
 int max(int a,int b);
 
-int **fillArray(int size,int N);
+int **initMatrix(int size,int N);
 
-void displayMatrice(int **matrice,int size);
+void displayMatrix(int **matrice,int size);
 
-void pgcb(int **matrice,int size);
+void displayResultMatrice(int **matrice, int size, Coord c);
+
+Coord pgcb(int **matrice,int size);
