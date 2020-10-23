@@ -28,7 +28,7 @@ int find_by_dichotomy(int array[], int size_t, int value)
     int high = size_t - 1;
     while (low <= high)
     {
-        int middle = (low + high) >> 1;
+        int middle = (low + high) / 2;
         if(value > array[middle])
             low = middle +1;
         else if (value < array[middle])

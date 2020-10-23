@@ -19,17 +19,18 @@ int main()
 	Object *backpack = malloc(30 * sizeof(Object));
 	backpack = knapsack(objects, 3, 10);
 	struct Object *endPtr = backpack + sizeof(backpack)/sizeof(backpack[0]);
-	while(backpack <= endPtr){
+	while(backpack < endPtr){
 		printf("L'object w : %d, c: %d\n", backpack->weight,backpack->cost);
 		backpack++;
 	}
 
-	int **matrice = fillArray(10, 21);
+	const int MATRICE_SIZE = 20;
+	int **matrice = fillArray(MATRICE_SIZE, 21);
 	printf("\n");
-	displayMatrice(matrice, 10);
+	displayMatrice(matrice, MATRICE_SIZE);
 
 	printf("\n\n");
-	pgcb(matrice, 10);
+	pgcb(matrice, MATRICE_SIZE);
 
 	return (0);
 }

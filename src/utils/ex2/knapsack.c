@@ -51,7 +51,7 @@ Object *knapsack(Object objects[], int size, int W){
     for(int i =0; i < size; i++){
         if(current_weight + objects[i].weight <= W){
             current_weight += objects[i].weight;
-            wp = &objects[i];
+            *wp = objects[i];
             wp++;
         }
     }

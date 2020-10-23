@@ -142,7 +142,6 @@ void pgcb(int **matrice, int size)
         }
     }
     displayMatrice(S, size);
-    printf("\n");
     Coord coord = findMax(S, size);
     displayResultMatrice(matrice, size, coord);
 }
