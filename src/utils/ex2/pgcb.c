@@ -38,8 +38,8 @@ int **initMatrix(int size, int N)
 
     for (int i = 0; i < N; i++)
     {
-        int l_index = rand() % (size - 1);
-        int c_index = rand() % (size - 1);
+        int l_index = rand() % size;
+        int c_index = rand() % size;
         matrice[l_index][c_index] = 1;
     }
     return matrice;
