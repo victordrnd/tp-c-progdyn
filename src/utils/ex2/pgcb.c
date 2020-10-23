@@ -40,7 +40,6 @@ int **initMatrix(int size, int N)
     for (int i = 0; i < N; i++)
     {
         int l_index = rand() % size;
-        printf("%d\n", l_index);
         int c_index = rand() % size;
         matrice[l_index][c_index] = 1;
     }
