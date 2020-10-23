@@ -8,9 +8,9 @@
  * 
  */
 
+#include <stdlib.h>
 
 #include "pgcd.h"
-
 /**
  * @brief  Return min of two value
  * @note   
@@ -36,9 +36,11 @@ int **initMatrix(int size, int N)
     for (int i = 0; i < size; i++)
         matrice[i] = (int *)calloc(size, sizeof(int));
 
+    srand(time(NULL));
     for (int i = 0; i < N; i++)
     {
         int l_index = rand() % size;
+        printf("%d\n", l_index);
         int c_index = rand() % size;
         matrice[l_index][c_index] = 1;
     }
