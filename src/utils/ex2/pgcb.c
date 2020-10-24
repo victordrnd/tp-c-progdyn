@@ -77,8 +77,8 @@ void displayMatrix(int **matrice, int size)
  * @retval None
  */
 void displayResultMatrice(int **matrice, int size, Coord c){    
-    for(int i = (c.x - c.size) + 1; i < c.x +1; i++){
-        for(int j = (c.y - c.size) + 1; j < c.y+1; j++){
+    for(int i = (c.x - c.size) + 1; i <= c.x; i++){
+        for(int j = (c.y - c.size) + 1; j <= c.y; j++){
             matrice[i][j] = 2;
         }
     }
